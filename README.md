@@ -9,5 +9,8 @@ A react UI component to display Star Ratings.
 ## Features:
 
 ## External Dependencies:
+- React
+- ReactDOM
+- Webpack
 
 ## Project Inspiration:
