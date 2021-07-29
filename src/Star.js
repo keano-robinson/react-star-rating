@@ -14,17 +14,36 @@ const partiallyShowIcon = (icon = null, iconSize={value: undefined, unit: undefi
  )
 }
 
-export const makeStar = ({ activeColor = "gold", inactiveColor = "grey", size={value:'20', unit:'px'}} = {}) => (
+/*
+makeStar allows you to override some default properties of the Star component: the color, the size and the fillable svg icon representing the 'star'
+*/
+export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey", size={value:'20', unit:'px'}} = {}) => (
     ({value = 0}) => (
         <div className="star-container" style={{display:"inline-block", posiiton:"relative"}}>
             {
                 partiallyShowIcon(
-                    <FaStar className="foreground-star" color={ value ? activeColor : inactiveColor } size={size.value + size.unit} />,
+                    React.createElement(
+                        icon,
+                        {
+                            className:"foreground-icon",
+                            color: activeColor,
+                            size: size.value + size.unit
+                        }
+                    ),
                     size,
                     value,
                 )
             }
-            <FaStar className="background-star" color={inactiveColor}  size={size.value + size.unit}/>
+            {
+                React.createElement(
+                    icon,
+                    {
+                        className:"background-star",
+                        color: inactiveColor,
+                        size: size.value + size.unit
+                    }
+                )
+            } 
         </div>
     )
 );
