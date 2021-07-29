@@ -1,4 +1,4 @@
-# StarRating Component for React
+# ⚛️ StarRating Component for React
 
 Created: 29/07/2021
 
