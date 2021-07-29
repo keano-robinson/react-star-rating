@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Star } from "./Star.js";
 
 
-export default function StarRating({ totalStars = 5, initalRating = 0, clickable = false, clickHandler = f => f, StarComponent=Star } = {}) {
+export default function StarRating({ totalStars = 5, initalRating = 0, clickable = false, clickHandler = f => f, StarComponent=Star, decimalPrecision=2 } = {}) {
     //Using React's useState hook to manage state
     const [rating, setRating] = useState(initalRating);
 
@@ -26,13 +26,13 @@ export default function StarRating({ totalStars = 5, initalRating = 0, clickable
 
     return (
         <>
-            <div className="star-rating" title={rating.toFixed(1)}>
+            <div className="star-rating" title={rating.toFixed(decimalPrecision)}>
                 {
                     createArray(totalStars, rating).map((v, i) => 
                         <StarComponent 
                             key={i} 
                             value={v} 
-                            onSelect={() => handleRating(i + 1)} />)
+                            onSelect={(thisStarValue) => handleRating(i + thisStarValue)} />)
                 }
             </div>
         </>
