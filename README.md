@@ -7,7 +7,7 @@ Created: 28/07/2021
 A demo of a react UI component that displays Star Ratings.
 
 ## Features:
-- Displays ratings, given as numerical values, and diplays a graphical representation
+- Diplays a graphical representation of ratings given as numerical values
 - Can dynamically update the rating displayed in response to user interaction
 
 ## External Dependencies:
