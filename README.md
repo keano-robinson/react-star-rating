@@ -12,5 +12,6 @@ A react UI component to display Star Ratings.
 - React
 - ReactDOM
 - Webpack
+- react-icons
 
 ## Project Inspiration:
