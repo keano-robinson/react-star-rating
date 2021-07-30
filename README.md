@@ -38,7 +38,7 @@ import { IoMdPlanet } from "react-icons/io"; //Import a fillable svg from react-
      - The inactive color of the icon (grey) 
      - The number of discrete divisions of the icon (4 divisions by default, indicating that the user can adjust ratings in increments of 0.25)
 
-    This is used to override the default value of StarComponent to the new 'star' icon, a baseball icon.
+    This is used to override the default value of StarComponent to the new 'star' icon, a planet icon.
 */
 
 const Planet = makeStar({icon: IoMdPlanet, activeColor: "red", size: {value:"50", unit:"px"}, numberOfDivisions: 4});
