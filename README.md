@@ -25,7 +25,7 @@ A demo of a react UI component that displays Star Ratings. The StarRating compon
 ## External Dependencies:
 - React
 - ReactDOM
-- Webpack (for demo)
+- Webpack (module bundler for demo)
 - react-icons
 
 ## Project Inspiration:
