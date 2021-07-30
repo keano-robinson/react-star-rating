@@ -4,12 +4,12 @@ Created: 29/07/2021
 
 ## Description: 
 
-A react UI component that displays star ratings. The `StarRating` component is intended for use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules in your React project's `src` folder to use these component. Follow the 
+A react UI component that displays star ratings. The `StarRating` component is intended for use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules into your React project's `src` folder to use these component. Follow the 
 [example](#example) below to see how to use the components. A live demo of this project can be viewed [here](https://react-star-rating-demo.netlify.app).
 
 ## Features:
-- `StarRating` diplays a graphical representation of ratings given as numerical values
-- `StarRating` can dynamically update the rating displayed in response to user interaction
+- `StarRating` diplays a graphical representation of ratings given as numerical values.
+- `StarRating` can dynamically update the rating displayed in response to user interaction.
 - The 'star' icon is configurable: The icon svg, the fill colours when selected and unselected, the size, and the precision to which the user can adjust the rating via the component can be altered with the `makeStar` function of `Star.js`. By importing `makeStar` function from `Star.js`, a 'star' can be created to meet the developer's needs; this 'star' can then be passed as a prop to the `StarRating` component to override its default 'star'.
 - The `StarRating` component is configurable: the total number of 'stars' displayed (default 5 'stars), the initial rating displayed (default 0), the interactivity of the component (`StarRating` is not clickable by default), this 'star' icon used (a star by default), and the decimal precision of the tooltip that is displayed when hovering over the component (2 decimal places by default) are all configurable.
 - `StarRating` can pass user ratings to parent component through its `clickHandler` function. When `StarRating` is clicked, the `clickHandler` function is called with the user's rating and the total number of 'stars' of the `StarRating` component (i.e. `clickHandler(rating, totalStars)`). Supplying a `clickHandler` method to `StarRating` will give you access to these parameters from a parent, React component.
@@ -23,10 +23,10 @@ import React, { useState } from "react";
 import StarRating from "./StarRating"; //Import StarRating component
 import { makeStar } from "./Star"; //makeStar allows developers to make a custom 'star' icon
 
-import { IoMdPlanet } from "react-icons/io"; //Import a fillable svg from react-icons to make a custom 'star'
+import { IoMdPlanet } from "react-icons/io"; //Import a svg from react-icons to make a custom 'star'
 
 /* 
-    An example of creating a custom 'star' using a fillable svg icon from react-icons.
+    An example of creating a custom 'star' using a svg icon from react-icons.
     Here, the default icon is overridden from a star icon to a planet icon. The color of the icon when it is active (i.e. selected)
     is overridden from yellow to red. And the size of the icon is overriden from 20px to 50px.
 
