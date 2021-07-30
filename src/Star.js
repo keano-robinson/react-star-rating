@@ -22,19 +22,19 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
 
     function ({value = 0, onSelect = f => f}) {
         const handleClick = e => {
-            const {pageX: userInputValue, currentTarget: relatedIcon} = e;
-            const {left: minValue, width: valueRange} = relatedIcon.getBoundingClientRect();
-            const userInputOffset = 3; //Technicality: the surrounding div has a slight offset to the image which this helps correct for
-            const iconCovered = (userInputValue + userInputOffset - minValue);
+            const {pageX: userInputValue, currentTarget: thisIcon} = e;
+            const {left: minValue, width: valueRange} = thisIcon.getBoundingClientRect();
+
+            const spanOfIconCovered = (userInputValue - minValue);
             const iconDivisionWidth = valueRange/ numberOfDivisions;
-            const numberOfCoveredIconDivisions = Math.round(iconCovered / iconDivisionWidth);
+            const numberOfCoveredIconDivisions = Math.round(spanOfIconCovered / iconDivisionWidth);
             const newValue = numberOfCoveredIconDivisions / numberOfDivisions;
 
             onSelect(newValue)
         }
 
         return (
-            <div className="star-container" onMouseMove={e => handleMouseMove(e)} style={{display:"inline-block", posiiton:"relative", ...style}} {...props}>
+            <div className="star-container" style={{display:"inline-block", posiiton:"relative", ...style}} {...props}>
                 {
                     partiallyShowIcon(
                         React.createElement(
