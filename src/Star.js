@@ -18,21 +18,19 @@ const partiallyShowIcon = (icon = null, iconSize={value: undefined, unit: undefi
 /*
 makeStar allows you to override some default properties of the Star component: the color, the size and the fillable svg icon representing the 'star'
 */
-export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey", size={value:'20', unit:'px'}, numberOfDivisions=4, style={}, ...props} = {}) => (
+export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey", size={value:'20', unit:'px'}, numberOfDivisions=2, style={}, ...props} = {}) => (
 
     function ({value = 0, onSelect = f => f}) {
-        const [tempValue, setTempValue] = useState(value)
-
-        const handleMouseMove = e => {
+        const handleClick = e => {
             const {pageX: userInputValue, currentTarget: relatedIcon} = e;
             const {left: minValue, width: valueRange} = relatedIcon.getBoundingClientRect();
             const userInputOffset = 3; //Technicality: the surrounding div has a slight offset to the image which this helps correct for
             const iconCovered = (userInputValue + userInputOffset - minValue);
             const iconDivisionWidth = valueRange/ numberOfDivisions;
             const numberOfCoveredIconDivisions = Math.round(iconCovered / iconDivisionWidth);
-            const newTempValue = numberOfCoveredIconDivisions / numberOfDivisions;
+            const newValue = numberOfCoveredIconDivisions / numberOfDivisions;
 
-            setTempValue(newTempValue);
+            onSelect(newValue)
         }
 
         return (
@@ -45,7 +43,7 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
                                 className:"foreground-icon",
                                 color: activeColor,
                                 size: size.value + size.unit,
-                                onClick: () => onSelect(tempValue)
+                                onClick: (e) => handleClick(e) 
                             }
                         ),
                         size,
@@ -59,7 +57,7 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
                             className:"background-star",
                             color: inactiveColor,
                             size: size.value + size.unit,
-                            onClick: () => onSelect(tempValue)
+                            onClick: (e) => handleClick(e) 
                         }
                     )
                 } 
