@@ -4,13 +4,8 @@ Created: 29/07/2021
 
 ## Description: 
 
-<<<<<<< HEAD
 A React UI component that displays star ratings. The `StarRating` component is intended For use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules in your React project's `src` folder to use these component. Follow the 
 [example](#example) below to see how to use the components. A live demo of this project can be viewed [here](https://keanorobinson.netlify.app/react-star-rating).
-=======
-A React UI component that displays star ratings. The `StarRating` component is intended for use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules into your React project's `src` folder to use these components. Follow the 
-[example](#example) below to see how to use the components. A live demo of this project can be viewed [here](https://react-star-rating-demo.netlify.app).
->>>>>>> 7967c966b3f7e1a419ebdf874d307a1fb5643af5
 
 ## Features:
 - `StarRating` diplays a graphical representation of ratings given as numerical values.
@@ -20,11 +15,7 @@ A React UI component that displays star ratings. The `StarRating` component is i
 - `StarRating` can pass user ratings to parent component through its `clickHandler` function. When `StarRating` is clicked, the `clickHandler` function is called with the user's rating and the total number of 'stars' of the `StarRating` component (i.e. `clickHandler(rating, totalStars)`). Supplying a `clickHandler` method to `StarRating` will give you access to these parameters from a parent, React component.
 
 ## <a id="example"></a>Example:
-<<<<<<< HEAD
 The code below was used to produce the demo. This shows the content of App.js. The file structure of the project is as shown in the [GitHub](https://github.com/keano-robinson/react-star-rating) repository. A live demo of this example can be viewed [here](https://keanorobinson.netlify.app/react-star-rating).
-=======
-Here is the code that was used to produce the demo. This shows the content of App.js. The file structure of the project is as shown in the [GitHub](https://github.com/keano-robinson/react-star-rating) repository. A live demo of this example can be viewed [here](https://react-star-rating-demo.netlify.app).
->>>>>>> 7967c966b3f7e1a419ebdf874d307a1fb5643af5
 
 ``` javascript
 import React, { useState } from "react";
@@ -35,7 +26,6 @@ import { makeStar } from "./Star"; //makeStar allows developers to make a custom
 import { IoMdPlanet } from "react-icons/io"; //Import a svg from react-icons to make a custom 'star'
 
 /* 
-<<<<<<< HEAD
     An example of creating a custom 'star' using a fillable svg icon from react-icons.
     
     - The default icon is overridden from a star icon to a planet icon. 
@@ -44,11 +34,6 @@ import { IoMdPlanet } from "react-icons/io"; //Import a svg from react-icons to 
     - The size of the icon is overriden from 20px to 50px.
     - The number of discrete divisions of the 'star' is overridden from 2 (allowing the user to adjust the rating in increments of 0.5) 
       to four (allowing thw user to adjust the rating in increments of 0.25)
-=======
-    An example of creating a custom 'star' using a svg icon from react-icons.
-    Here, the default icon is overridden from a star icon to a planet icon. The color of the icon when it is active (i.e. selected)
-    is overridden from yellow to red. And the size of the icon is overriden from 20px to 50px.
->>>>>>> 7967c966b3f7e1a419ebdf874d307a1fb5643af5
 
     Parameters that are not overridden are left as default.
 
