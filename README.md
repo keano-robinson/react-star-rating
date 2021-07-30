@@ -13,10 +13,7 @@ below to see how to use the components.
 - `StarRating` can dynamically update the rating displayed in response to user interaction
 - The 'star' icon is configurable: The icon svg, the fill colours when selected and unselected, the size, and the precision to which the user can adjust the rating via the component can be altered with the `makeStar` function of `Star.js`. By importing `makeStar` function from `Star.js`, a 'star' can be created to meet the developer's needs; this 'star' can then be passed as a prop to the `StarRating` component to override its default 'star'.
 - The `StarRating` component is configurable: the total number of 'stars' displayed (default 5 'stars), the initial rating displayed (default 0), the interactivity of the component (`StarRating` is not clickable by default), this 'star' icon used (a star by default), and the decimal precision of the tooltip that is displayed when hovering over the component (2 decimal places by default) are all configurable.
-- `StarRating` can pass user ratings to parent component through its `clickHandler` function. When `StarRating` is clicked, the `clickHandler` function is called with the user's rating and the total number of 'stars' of the `StarRating` component (i.e. `clickHandler(rating, totalStars)`). Supplying a `clickHandler` method to `StarRating` with give you access to these parameters from a parent, React component.
-
-## API:
-***To do***
+- `StarRating` can pass user ratings to parent component through its `clickHandler` function. When `StarRating` is clicked, the `clickHandler` function is called with the user's rating and the total number of 'stars' of the `StarRating` component (i.e. `clickHandler(rating, totalStars)`). Supplying a `clickHandler` method to `StarRating` will give you access to these parameters from a parent, React component.
 
 ## <a id="example"></a>Example:
 Here is the code that was used to produce the demo. This shows the content of App.js. The file structure of the project is as shown in [GitHub](https://github.com/keano-robinson/react-star-rating) repository.
@@ -58,8 +55,8 @@ export default function App() {
                     clickable: true, //Makes StarRating interactive (false by default)
                     clickHandler: (newRating, _totalStars) => setRating(newRating), //Dynamically adjusts rating. These values are used in the paragraph below.
                         //When StarRating is clicked, clickHandler is called with the new rating and total number of 'stars' of the StarRating component
-                    StarComponent: Planet, //A gold star with grey background by default
-                    decimalPrecision //Adjusts the precision of the tooltip
+                    StarComponent: Planet, //Overrides default star icon with a planet icon (default: gold star with grey background)
+                    decimalPrecision //Adjusts the precision of the tooltip, figures are given to 1 decimal place by default
                 })}
                 <p>
                     Rating: {rating.toFixed(decimalPrecision)} out of {totalStars.toFixed(decimalPrecision)}
@@ -77,7 +74,7 @@ export default function App() {
     );
 }
 ```
-## Instructions To Build Demo:
+## API:
 ***To do***
 
 ## External Dependencies:
