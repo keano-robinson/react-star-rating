@@ -4,7 +4,7 @@ Created: 29/07/2021
 
 ## Description: 
 
-A react UI component that displays star ratings. The StarRating component is intended For use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules in your React project's `src` folder to use these component. Follow the 
+A react UI component that displays star ratings. The StarRating component is intended for use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules in your React project's `src` folder to use these component. Follow the 
 [example](#example) below to see how to use the components. A live demo of this project can be viewed [here](https://react-star-rating-demo.netlify.app).
 
 ## Features:
