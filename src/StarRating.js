@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { Star } from "./Star.js";
 
 
-export default function StarRating({ totalStars = 5, initalRating = 0, clickable = false, clickHandler = f => f, StarComponent=Star, decimalPrecision=2 } = {}) {
+export default function StarRating({ totalStars = 5, initalRating = 0, clickable = false, clickHandler = f => f, StarComponent=Star, decimalPrecision=2, style={}, ...props } = {}) {
     //Using React's useState hook to manage state
     const [rating, setRating] = useState(initalRating);
 
-    /*Function to turn a rating into an array of values for each star 
-    (e.g. (totalStars=5, rating=3.3) --> [1, 1, 1, 0.3, 0, 0]) of total stars*/
+    /*Function to turn a rating into an array of values for each star of total stars
+    (e.g. (totalStars=5, rating=3.3) --> [1, 1, 1, 0.3, 0, 0])*/
     const createArray = (totalStars, rating) => [
         ...Array(Math.floor(rating)).fill(1), 
         ...Array(Math.ceil(rating % 1)).fill(rating % 1), 
@@ -25,16 +25,14 @@ export default function StarRating({ totalStars = 5, initalRating = 0, clickable
     }
 
     return (
-        <>
-            <div className="star-rating" title={rating.toFixed(decimalPrecision)}>
-                {
-                    createArray(totalStars, rating).map((v, i) => 
-                        <StarComponent 
-                            key={i} 
-                            value={v} 
-                            onSelect={(thisStarValue) => handleRating(i + thisStarValue)} />)
-                }
-            </div>
-        </>
+        <div className="star-rating" title={rating.toFixed(decimalPrecision)} style={...style} {...props}>
+            {
+                createArray(totalStars, rating).map((v, i) => 
+                    <StarComponent 
+                        key={i} 
+                        value={v} 
+                        onSelect={(thisStarValue) => handleRating(i + thisStarValue)} />)
+            }
+        </div>
     );
 }

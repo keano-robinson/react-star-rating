@@ -18,7 +18,7 @@ const partiallyShowIcon = (icon = null, iconSize={value: undefined, unit: undefi
 /*
 makeStar allows you to override some default properties of the Star component: the color, the size and the fillable svg icon representing the 'star'
 */
-export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey", size={value:'20', unit:'px'}, numberOfDivisions=4} = {}) => (
+export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey", size={value:'20', unit:'px'}, numberOfDivisions=4, style={}, ...props} = {}) => (
 
     function ({value = 0, onSelect = f => f}) {
         const [tempValue, setTempValue] = useState(value)
@@ -36,7 +36,7 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
         }
 
         return (
-            <div className="star-container" onMouseMove={e => handleMouseMove(e)} style={{display:"inline-block", posiiton:"relative"}}>
+            <div className="star-container" onMouseMove={e => handleMouseMove(e)} style={{display:"inline-block", posiiton:"relative", ...style}} {...props}>
                 {
                     partiallyShowIcon(
                         React.createElement(
