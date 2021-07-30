@@ -22,7 +22,7 @@ const Planet = makeStar({icon: IoMdPlanet, activeColor: "red", size: {value:"50"
 export default function App() {
     const initialRating = 4.5; //Give the StarRating components an inital rating of 4.5 for demonstration purposes
     const [rating, setRating] = useState(initialRating); 
-    const totalStars = 5;
+    const totalStars = 6;
     const decimalPrecision = 2;
     return (
         <div className="app-container">
@@ -46,7 +46,7 @@ export default function App() {
                 <h3>Default StarRating (Non-Interactive Component)</h3>
                 <StarRating rating={initialRating} />
                 <p>
-                    Rating: {initialRating.toFixed(decimalPrecision)} out of {initialRating.toFixed(decimalPrecision)}
+                    Rating: {initialRating.toFixed(decimalPrecision)} out of 5.00
                 </p>
             </div>
         </div>
