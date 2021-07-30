@@ -72,7 +72,7 @@ export default function App() {
 - React
 - ReactDOM
 - Webpack (module bundler for demo)
-- react-icons
+- [react-icons](https://react-icons.github.io/react-icons/)
 
 ## Project Inspiration:
 > [react-rating-star-component](https://www.npmjs.com/package/react-rating-stars-component)
