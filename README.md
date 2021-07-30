@@ -53,7 +53,7 @@ export default function App() {
                 initalRating: rating, //0 by default
                 totalStars, //5 by default
                 clickable: true, //Makes StarRating interactive (false by default)
-                clickHandler: (newRating, _totalStars) => setRating(newRating), //Dynamically adjusts rating. These values used in the paragraph below.
+                clickHandler: (newRating, _totalStars) => setRating(newRating), //Dynamically adjusts rating. These values are used in the paragraph below.
                      //When StarRating is clicked, clickHandler is called with the new rating and total number of 'stars' of the StarRating component
                 StarComponent: Planet, //A gold star with grey background by default
                 decimalPrecision //Adjusts the precision of the tooltip
