@@ -3,21 +3,24 @@ import React, { useState } from "react";
 import StarRating from "./StarRating"; //Import StarRating component
 import { makeStar } from "./Star"; //makeStar allows developers to make a custom 'star' icon
 
-import { IoMdPlanet } from "react-icons/io"; //Import a fillable svg from react-icons to make a custom 'star'
+import { IoMdPlanet } from "react-icons/io"; //Import a svg from react-icons to make a custom 'star'
 
 /* 
     An example of creating a custom 'star' using a fillable svg icon from react-icons.
-    Here, the default icon is overridden from a star icon to a planet icon. The color of the icon when it is active (i.e. selected)
-    is overridden from yellow to red. And the size of the icon is overriden from 20px to 50px.
+    
+    - The default icon is overridden from a star icon to a planet icon. 
+    - The color of the icon when it is active (i.e. selected) is overridden from yellow to red. 
+    - The color of the icon when it is inactive (i.e. unselected) is overridden from grey to black. 
+    - The size of the icon is overriden from 20px to 50px.
+    - The number of discrete divisions of the 'star' is overridden from 2 (allowing the user to adjust the rating in increments of 0.5) 
+      to four (allowing thw user to adjust the rating in increments of 0.25)
 
-    All other parameters are left as default: 
-     - The inactive color of the icon (grey) 
-     - The number of discrete divisions of the icon (4 divisions by default, indicating that the user can adjust ratings in increments of 0.25)
+    Parameters that are not overridden are left as default.
 
-    This is used to override the default value of StarComponent to the new 'star' icon, a planet icon.
+    This is used to override the default value of StarComponent of StarRating to the new 'star' icon, a planet icon.
 */
 
-const Planet = makeStar({icon: IoMdPlanet, activeColor: "red", size: {value:"50", unit:"px"}, numberOfDivisions: 4});
+const Planet = makeStar({icon: IoMdPlanet, activeColor: "red", inactiveColor: "black", size: {value:"50", unit:"px"}, numberOfDivisions: 4});
 
 export default function App() {
     const initialRating = 4.5; //Give the StarRating components an inital rating of 4.5 for demonstration purposes
