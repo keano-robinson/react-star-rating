@@ -67,7 +67,7 @@ export default function App() {
                 <h3>Default StarRating (Non-Interactive Component)</h3>
                 <StarRating rating={initialRating} />
                 <p>
-                    Rating: {initialRating.toFixed(decimalPrecision)} out of 5.00
+                    Rating: {initialRating} out of 5.0
                 </p>
             </div>
         </div>

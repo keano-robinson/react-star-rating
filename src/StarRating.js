@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Star } from "./Star.js";
 
 
-export default function StarRating({ totalStars = 5, rating = 0, clickable = false, clickHandler = f => f, StarComponent=Star, decimalPrecision=2, style={}, ...props } = {}) {
+export default function StarRating({ totalStars = 5, rating = 0, clickable = false, clickHandler = f => f, StarComponent=Star, decimalPrecision=1, style={}, ...props } = {}) {
     //Using React's useState hook to manage state
     const [dynamicRating, setDynamicRating] = useState(rating);
 
