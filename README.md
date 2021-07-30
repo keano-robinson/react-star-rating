@@ -5,7 +5,7 @@ Created: 29/07/2021
 ## Description: 
 
 A react UI component that displays star ratings. The StarRating component is intended For use with [react-icons](https://react-icons.github.io/react-icons). You may copy and paste the `Star.js` and `StarRating.js` modules in your React project's `src` folder to use these component. Follow the 
-[example](#example) below to see how to use the components. A live demo of this project, displaying the [example](#example) shown below, can be viewed [here](https://react-star-rating-demo.netlify.app).
+[example](#example) below to see how to use the components. A live demo of this project can be viewed [here](https://react-star-rating-demo.netlify.app).
 
 ## Features:
 - `StarRating` diplays a graphical representation of ratings given as numerical values
@@ -15,7 +15,7 @@ A react UI component that displays star ratings. The StarRating component is int
 - `StarRating` can pass user ratings to parent component through its `clickHandler` function. When `StarRating` is clicked, the `clickHandler` function is called with the user's rating and the total number of 'stars' of the `StarRating` component (i.e. `clickHandler(rating, totalStars)`). Supplying a `clickHandler` method to `StarRating` will give you access to these parameters from a parent, React component.
 
 ## <a id="example"></a>Example:
-Here is the code that was used to produce the demo. This shows the content of App.js. The file structure of the project is as shown in [GitHub](https://github.com/keano-robinson/react-star-rating) repository.
+Here is the code that was used to produce the demo. This shows the content of App.js. The file structure of the project is as shown in [GitHub](https://github.com/keano-robinson/react-star-rating) repository. A live demo of this example can be viewed [here](https://react-star-rating-demo.netlify.app).
 
 ``` javascript
 import React, { useState } from "react";
