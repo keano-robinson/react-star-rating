@@ -56,10 +56,10 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
                         icon,
                         {
                             className:"background-icon",
-                            color: inactiveColor,
                             size: size.value + size.unit,
                             style,
                             ...props,
+                            color: inactiveColor,
                             onClick: (e) => handleClick(e) 
                         }
                     )
