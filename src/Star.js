@@ -25,8 +25,8 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
             const {pageX: userInputValue, currentTarget: thisIcon} = e;
             const {left: minValue, width: valueRange} = thisIcon.getBoundingClientRect();
 
-            const spanOfIconCovered = (userInputValue - minValue);
-            const iconDivisionWidth = valueRange/ numberOfDivisions;
+            const spanOfIconCovered = userInputValue - minValue;
+            const iconDivisionWidth = valueRange / numberOfDivisions;
             const numberOfCoveredIconDivisions = Math.round(spanOfIconCovered / iconDivisionWidth);
             const newValue = numberOfCoveredIconDivisions / numberOfDivisions;
 
@@ -34,7 +34,7 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
         }
 
         return (
-            <div className="star-container" style={{display:"inline-block", posiiton:"relative", ...style}} {...props}>
+            <div className="star-container" style={{display:"inline-block", posiiton:"relative"}}>
                 {
                     partiallyShowIcon(
                         React.createElement(
@@ -43,10 +43,11 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
                                 className:"foreground-icon",
                                 color: activeColor,
                                 size: size.value + size.unit,
+                                style,
+                                ...props,
                                 onClick: (e) => handleClick(e) 
                             }
-                        ),
-                        size,
+                        ), size,
                         value,
                     )
                 }
@@ -54,9 +55,11 @@ export const makeStar = ({ icon=FaStar, activeColor="gold", inactiveColor="grey"
                     React.createElement(
                         icon,
                         {
-                            className:"background-star",
+                            className:"background-icon",
                             color: inactiveColor,
                             size: size.value + size.unit,
+                            style,
+                            ...props,
                             onClick: (e) => handleClick(e) 
                         }
                     )
